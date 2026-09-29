@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Raízes | Sabores do Nordeste</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NOTIFICAÇÃO -->
+    <div id="toast" class="toast"></div>
+
+    <!-- CABEÇALHO -->
+    <header class="topbar">
+
+        <a href="#inicio" class="marca">
+            <span class="marca-icone">R</span>
+
+            <div>
+                <strong>RAÍZES</strong>
+                <small>Sabores do Nordeste</small>
+            </div>
+        </a>
+
+        <nav class="menu-principal">
+            <a href="#inicio">Início</a>
+            <a href="#unidades-secao">Unidades</a>
+            <a href="#cardapio-secao">Cardápio</a>
+            <a href="#finalizar-pedido">Pedido</a>
+        </nav>
+
+        <button
+            class="botao-carrinho"
+            id="abrir-carrinho"
+            type="button"
+            aria-label="Abrir carrinho">
+
+            <span>🛒</span>
+
+            <span>
+                Carrinho
+                <b id="quantidade-carrinho">0</b>
+            </span>
+
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="inicio">
+
+            <div class="hero-conteudo">
+
+                <span class="etiqueta">
+                    ● COMIDA DE VERDADE
+                </span>
+
+                <h1>
+                    O sabor do Nordeste
+                    <span>na sua cidade.</span>
+                </h1>
+
+                <p>
+                    Escolha uma unidade, monte seu pedido e
+                    retire do seu jeito. Tudo de forma simples,
+                    rápida e digital.
+                </p>
+
+                <div class="hero-acoes">
+
+                    <button
+                        class="botao-destaque"
+                        id="ver-cardapio"
+                        type="button">
+
+                        Montar meu pedido
+                        <span>→</span>
+
+                    </button>
+
+                    <a href="#unidades-secao" class="botao-secundario">
+                        Escolher unidade
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-destaque">
+
+                <div class="hero-card">
+
+                    <span class="hero-card-tag">
+                        SABOR DA CASA
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85"
+                        alt="Comida nordestina">
+
+                    <div class="hero-card-info">
+                        <div>
+                            <strong>Cuscuz Recheado</strong>
+                            <span>Carne de sol + queijo coalho</span>
+                        </div>
+
+                        <b>R$ 16,90</b>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- UNIDADES -->
+        <section class="secao unidades" id="unidades-secao">
+
+            <div class="cabecalho-secao">
+
+                <div>
+                    <span class="numero-secao">01</span>
+
+                    <h2>
+                        Onde você vai retirar?
+                    </h2>
+
+                    <p>
+                        Escolha uma unidade para liberar
+                        o cardápio disponível.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <input
+                type="hidden"
+                id="selecionar-unidade"
+                value="">
+
+
+            <div
+                class="unidades-grid"
+                id="lista-unidades">
+            </div>
+
+            <p
+                id="aviso-unidade"
+                class="mensagem-alerta">
+            </p>
+
+        </section>
+
+
+        <!-- CARDÁPIO -->
+        <section class="secao cardapio" id="cardapio-secao">
+
+            <div class="cabecalho-cardapio">
+
+                <div>
+                    <span class="numero-secao">02</span>
+
+                    <h2>Escolha seus sabores</h2>
+
+                    <p id="filtro-unidade-info">
+                        Selecione uma unidade para visualizar
+                        o cardápio.
+                    </p>
+                </div>
+
+                <div
+                    class="unidade-atual"
+                    id="unidade-atual">
+                    Nenhuma unidade
+                </div>
+
+            </div>
+
+
+            <!-- FILTROS -->
+            <div
+                class="filtros-categoria"
+                id="filtros-categoria">
+            </div>
+
+
+            <!-- PRODUTOS -->
+            <div
+                class="produtos"
+                id="lista-produtos">
+
+                <div class="estado-vazio">
+
+                    <span>🍽️</span>
+
+                    <h3>Seu cardápio está esperando</h3>
+
+                    <p>
+                        Escolha uma unidade acima para
+                        começar seu pedido.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CHECKOUT -->
+        <section
+            class="secao checkout"
+            id="finalizar-pedido">
+
+            <div class="cabecalho-secao">
+
+                <div>
+                    <span class="numero-secao">03</span>
+
+                    <h2>Finalizar pedido</h2>
+
+                    <p>
+                        Só falta informar seus dados e
+                        escolher como retirar.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="checkout-grid">
+
+                <!-- DADOS -->
+                <div class="checkout-card">
+
+                    <div class="checkout-titulo">
+                        <span>01</span>
+
+                        <div>
+                            <strong>Seus dados</strong>
+                            <small>
+                                Usados somente para processar
+                                o pedido.
+                            </small>
+                        </div>
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="nome-cliente">
+                            Nome completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome-cliente"
+                            placeholder="Digite seu nome">
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="telefone-cliente">
+                            Telefone / WhatsApp
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefone-cliente"
+                            placeholder="(00) 00000-0000">
+
+                    </div>
+
+                </div>
+
+
+                <!-- RETIRADA -->
+                <div class="checkout-card">
+
+                    <div class="checkout-titulo">
+
+                        <span>02</span>
+
+                        <div>
+                            <strong>Como você vai retirar?</strong>
+
+                            <small>
+                                Escolha o canal do seu pedido.
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="opcoes-retirada">
+
+                        <label class="opcao-retirada">
+
+                            <input
+                                type="radio"
+                                name="retirada"
+                                value="balcao">
+
+                            <span class="opcao-icone">
+                                🧑‍🍳
+                            </span>
+
+                            <span>
+                                <strong>Balcão</strong>
+                                <small>Atendimento presencial</small>
+                            </span>
+
+                        </label>
+
+
+                        <label class="opcao-retirada">
+
+                            <input
+                                type="radio"
+                                name="retirada"
+                                value="totem">
+
+                            <span class="opcao-icone">
+                                🖥️️
+                            </span>
+
+                            <span>
+                                <strong>Totem</strong>
+                                <small>Autoatendimento</small>
+                            </span>
+
+                        </label>
+
+
+                        <label class="opcao-retirada">
+
+                            <input
+                                type="radio"
+                                name="retirada"
+                                value="app">
+
+                            <span class="opcao-icone">
+                                📱
+                            </span>
+
+                            <span>
+                                <strong>Aplicativo</strong>
+                                <small>Pedido pelo app</small>
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LGPD -->
+                <div class="checkout-card lgpd-card">
+
+                    <div class="checkout-titulo">
+
+                        <span>03</span>
+
+                        <div>
+                            <strong>Privacidade</strong>
+
+                            <small>
+                                Seus dados devem ser utilizados
+                                somente para o pedido.
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <label class="checkbox-lgpd">
+
+                        <input
+                            type="checkbox"
+                            id="consentimento-lgpd">
+
+                        <span>
+                            Concordo com a coleta e utilização
+                            dos meus dados pessoais para
+                            processamento deste pedido.
+                        </span>
+
+                    </label>
+
+
+                    <p class="lgpd-texto">
+                        🔒 Os dados informados são utilizados
+                        exclusivamente para esta experiência
+                        de pedido e processamento da compra.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="checkout-acao">
+
+                <button
+                    class="botao-destaque grande"
+                    id="continuar-pedido"
+                    type="button">
+
+                    Continuar para pagamento
+                    <span>→</span>
+
+                </button>
+
+            </div>
+
+
+            <!-- PAGAMENTO -->
+            <div
+                class="pagamento"
+                id="pagamento"
+                hidden>
+
+                <div class="pagamento-topo">
+
+                    <div>
+
+                        <span class="numero-secao">
+                            04
+                        </span>
+
+                        <h2>Pagamento</h2>
+
+                        <p>
+                            O pagamento abaixo é apenas uma
+                            simulação de um gateway externo.
+                        </p>
+
+                    </div>
+
+
+                    <div class="total-final">
+
+                        <small>Total</small>
+
+                        <strong>
+                            R$
+                            <span id="total-pagamento">
+                                0,00
+                            </span>
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="opcoes-pagamento">
+
+                    <label class="opcao-pagamento">
+
+                        <input
+                            type="radio"
+                            name="pagamento"
+                            value="pix">
+
+                        <span class="pagamento-icone">
+                            ⚡
+                        </span>
+
+                        <span>
+                            <strong>Pix</strong>
+                            <small>
+                                Aprovação instantânea
+                            </small>
+                        </span>
+
+                    </label>
+
+
+                    <label class="opcao-pagamento">
+
+                        <input
+                            type="radio"
+                            name="pagamento"
+                            value="cartao">
+
+                        <span class="pagamento-icone">
+                            💳
+                        </span>
+
+                        <span>
+                            <strong>Cartão</strong>
+                            <small>
+                                Crédito ou débito
+                            </small>
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <button
+                    class="botao-destaque grande"
+                    id="confirmar-pagamento"
+                    type="button">
+
+                    Confirmar pagamento
+                    <span>✓</span>
+
+                </button>
+
+            </div>
+
+
+            <!-- CONFIRMAÇÃO -->
+            <div
+                class="pedido-confirmado"
+                id="pedido-confirmado"
+                hidden>
+
+                <div class="confirmacao-icone">
+                    ✓
+                </div>
+
+                <span class="etiqueta">
+                    PEDIDO CONFIRMADO
+                </span>
+
+                <h2>
+                    Tudo certo! 🎉
+                </h2>
+
+                <p>
+                    Seu pedido foi enviado para a unidade
+                    selecionada.
+                </p>
+
+
+                <div
+                    class="numero-pedido"
+                    id="numero-pedido">
+                </div>
+
+
+                <div
+                    class="resumo-pedido"
+                    id="resumo-pedido">
+                </div>
+
+
+                <!-- STATUS -->
+                <div class="status-pedido">
+
+                    <div class="status-item ativo">
+
+                        <span>✓</span>
+
+                        <div>
+                            <strong>Pedido recebido</strong>
+                            <small>Confirmado</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="status-linha"></div>
+
+
+                    <div class="status-item">
+
+                        <span>2</span>
+
+                        <div>
+                            <strong>Em preparo</strong>
+                            <small>Próxima etapa</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="status-linha"></div>
+
+
+                    <div class="status-item">
+
+                        <span>3</span>
+
+                        <div>
+                            <strong>Pronto</strong>
+                            <small>Retirada</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- OVERLAY DO CARRINHO -->
+    <div
+        class="overlay"
+        id="overlay-carrinho">
+    </div>
+
+
+    <!-- CARRINHO LATERAL -->
+    <aside
+        class="carrinho"
+        id="carrinho">
+
+        <div class="carrinho-topo">
+
+            <div>
+                <span class="numero-secao">
+                    SEU PEDIDO
+                </span>
+
+                <h2>Carrinho</h2>
+            </div>
+
+            <button
+                id="fechar-carrinho"
+                class="fechar-carrinho"
+                type="button">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="lista-carrinho"
+            id="lista-carrinho">
+
+            <div class="carrinho-vazio">
+
+                <span>🛒</span>
+
+                <strong>
+                    Seu carrinho está vazio
+                </strong>
+
+                <small>
+                    Adicione alguns sabores para começar.
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="carrinho-rodape">
+
+            <div class="total-carrinho">
+
+                <span>Total</span>
+
+                <strong>
+                    R$
+                    <span id="valor-total">
+                        0,00
+                    </span>
+                </strong>
+
+            </div>
+
+
+            <button
+                id="ir-checkout"
+                class="botao-destaque grande"
+                type="button">
+
+                Continuar pedido
+                <span>→</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <div>
+
+            <strong>RAÍZES</strong>
+
+            <p>
+                Sabores do Nordeste na sua cidade.
+            </p>
+
+        </div>
+
+
+        <p>
+            © 2026 Rede Raízes do Nordeste
+        </p>
+
+    </footer>
+
+
+    <script src="js/dados.js"></script>
+    <script src="js/carrinho.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
